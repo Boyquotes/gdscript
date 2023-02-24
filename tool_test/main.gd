@@ -23,7 +23,10 @@ func _ready():
 	pass # Replace with function body.
 	rect_size =  get_tree().root.size  # get_node("/root")
 	print(rect_size)
+	#if OS.get_name()=="HTML5":
+	#self.set_size( OS.get_window_size() )
 	get_tree().root.connect("size_changed", self, "on_size_changed")
+	OS.set_window_maximized(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
