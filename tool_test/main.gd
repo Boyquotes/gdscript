@@ -23,18 +23,14 @@ func _ready():
 	pass # Replace with function body.
 	rect_size =  get_tree().root.size  # get_node("/root")
 	print(rect_size)
-	get_tree().root.connect("size_changed", self, "myfunc")
-	
-
+	get_tree().root.connect("size_changed", self, "on_size_changed")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if rect_size != get_tree().root.size:
 		rect_size = get_tree().root.size
 	
-		
-
-func myfunc():
+func on_size_changed():
 	print("Resizing: ", get_viewport_rect().size, OS.get_window_size())
 	self.set_size( OS.get_window_size() )
 
