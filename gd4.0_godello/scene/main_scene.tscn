@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cel263k5mm6co"]
+[gd_scene load_steps=2 format=3 uid="uid://cu047752ix1lm"]
 
-[ext_resource type="Script" path="res://scene/main_scene.gd" id="1_2kpfh"]
+[ext_resource type="Script" path="res://script/main_scene.gd" id="1_yoitm"]
 
 [node name="MainScene" type="ColorRect"]
 anchors_preset = 15
@@ -10,7 +10,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_2kpfh")
+script = ExtResource("1_yoitm")
 
 [node name="ContentContainer" type="BoxContainer" parent="."]
 layout_mode = 0
