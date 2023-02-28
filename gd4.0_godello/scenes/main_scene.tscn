@@ -12,7 +12,15 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_yoitm")
 
-[node name="ContentContainer" type="BoxContainer" parent="."]
-layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 600.0
+[node name="TopBar" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(1024, 40)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="color" type="ColorRect" parent="TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.462745, 0.564706, 1, 1)
