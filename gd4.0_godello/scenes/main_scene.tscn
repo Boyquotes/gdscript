@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu047752ix1lm"]
+[gd_scene load_steps=7 format=3 uid="uid://cu047752ix1lm"]
 
 [ext_resource type="Script" path="res://script/main_scene.gd" id="1_yoitm"]
 [ext_resource type="StyleBox" path="res://assets/style_topbar_button_normal.tres" id="2_5atpe"]
 [ext_resource type="Texture2D" uid="uid://f5hlgurncux5" path="res://assets/icons/home-white.png" id="2_hdto4"]
 [ext_resource type="StyleBox" path="res://assets/style_topbar_button_hover.tres" id="3_bd1kt"]
 [ext_resource type="StyleBox" path="res://assets/style_topbar_button_pressed.tres" id="3_w3lup"]
+[ext_resource type="Texture2D" uid="uid://bk550wi0bh5mh" path="res://assets/icons/sign-out-white.png" id="6_rrlih"]
 
 [node name="MainScene" type="ColorRect"]
 anchors_preset = 15
@@ -29,7 +30,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.00784314, 0.415686, 0.654902, 1)
 
-[node name="Button" type="Button" parent="TopBar/color"]
+[node name="HomeButton" type="Button" parent="TopBar/color"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -45,3 +46,42 @@ theme_override_styles/focus = ExtResource("3_w3lup")
 text = "home"
 icon = ExtResource("2_hdto4")
 expand_icon = true
+
+[node name="LogOutButton" type="Button" parent="TopBar/color"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = ExtResource("2_5atpe")
+theme_override_styles/hover = ExtResource("3_bd1kt")
+theme_override_styles/pressed = ExtResource("3_w3lup")
+theme_override_styles/focus = ExtResource("3_w3lup")
+text = "Log Out"
+icon = ExtResource("6_rrlih")
+expand_icon = true
+
+[node name="userButton" type="Button" parent="TopBar/color"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -16.0
+offset_right = -110.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = ExtResource("2_5atpe")
+theme_override_styles/hover = ExtResource("3_bd1kt")
+theme_override_styles/pressed = ExtResource("3_w3lup")
+theme_override_styles/focus = ExtResource("3_w3lup")
+text = "Alfred"
