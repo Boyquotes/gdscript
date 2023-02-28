@@ -52,7 +52,7 @@ func create_single_error_popup(message : String, focus_after_close : Control, pa
 	popup.get_node("Button").grab_focus()
 	#popup.get_close_button().grab_focus()
 
-	await popup.tree_exited()
+	await popup.close_requested
 	#yield(popup, "tree_exited")
 
 	if popup:

@@ -2,4 +2,5 @@ extends Window
 
 
 func _on_Button_pressed():
-	queue_free()
+	emit_signal("close_requested")
+	#queue_free()

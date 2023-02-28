@@ -1,12 +1,30 @@
-[gd_scene format=3 uid="uid://cduno1nce81t5"]
+[gd_scene load_steps=2 format=3 uid="uid://cduno1nce81t5"]
+
+[ext_resource type="Script" path="res://script/single_button_popup.gd" id="1_g7gc8"]
 
 [node name="SingleButtonPopup" type="Window"]
+size = Vector2i(133, 100)
+wrap_controls = true
+exclusive = true
+unresizable = true
+script = ExtResource("1_g7gc8")
 
 [node name="Button" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -15.5
+offset_right = 15.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "OK"
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 133.0
+offset_bottom = 26.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
