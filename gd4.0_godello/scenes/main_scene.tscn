@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu047752ix1lm"]
+[gd_scene load_steps=3 format=3 uid="uid://cu047752ix1lm"]
 
 [ext_resource type="Script" path="res://script/main_scene.gd" id="1_yoitm"]
+[ext_resource type="Texture2D" uid="uid://f5hlgurncux5" path="res://assets/icons/home-white.png" id="2_hdto4"]
 
 [node name="MainScene" type="ColorRect"]
 anchors_preset = 15
@@ -23,7 +24,7 @@ grow_horizontal = 2
 [node name="color" type="ColorRect" parent="TopBar"]
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.462745, 0.564706, 1, 1)
+color = Color(0.34902, 0.443137, 1, 1)
 
 [node name="Button" type="Button" parent="TopBar/color"]
 layout_mode = 1
@@ -35,3 +36,5 @@ offset_right = 100.0
 offset_bottom = 16.0
 grow_vertical = 2
 text = "home"
+icon = ExtResource("2_hdto4")
+expand_icon = true
