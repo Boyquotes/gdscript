@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cduno1nce81t5"]
+
+[node name="SingleButtonPopup" type="Window"]
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "OK"
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
