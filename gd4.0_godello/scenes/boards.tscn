@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://gdg15rvllixu"]
+
+[ext_resource type="FontFile" uid="uid://byphkn3yqgafd" path="res://assets/fonts/font_card_title.tres" id="1_txqp0"]
+
+[node name="Boards" type="ColorRect"]
+offset_right = 1024.0
+offset_bottom = 600.0
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(0, 0, 0.32549, 1)
+layout_mode = 0
+offset_left = 52.0
+offset_top = 62.0
+offset_right = 379.0
+offset_bottom = 233.0
+theme_override_fonts/font = ExtResource("1_txqp0")
+theme_override_font_sizes/font_size = 24
+text = "Personal Boards"
