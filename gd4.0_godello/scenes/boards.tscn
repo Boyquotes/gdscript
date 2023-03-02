@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://gdg15rvllixu"]
+[gd_scene load_steps=6 format=3 uid="uid://gdg15rvllixu"]
 
 [ext_resource type="Texture2D" uid="uid://cocm3yhxj03wo" path="res://assets/icons/user.svg" id="1_fx1tq"]
 [ext_resource type="FontFile" uid="uid://byphkn3yqgafd" path="res://assets/fonts/font_card_title.tres" id="1_txqp0"]
 [ext_resource type="StyleBox" path="res://assets/style_board_card_button.tres" id="3_kecpn"]
+[ext_resource type="FontFile" path="res://assets/fonts/font_regular.tres" id="3_tp20a"]
 [ext_resource type="StyleBox" path="res://assets/style_board_card_button_hover.tres" id="4_4vi3q"]
 
 [node name="Boards" type="ColorRect"]
@@ -58,10 +59,11 @@ columns = 4
 clip_contents = true
 custom_minimum_size = Vector2(170, 80)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.0901961, 0.168627, 0.301961, 1)
 theme_override_colors/font_pressed_color = Color(0.0901961, 0.168627, 0.301961, 1)
 theme_override_colors/font_hover_color = Color(0.0901961, 0.168627, 0.301961, 1)
 theme_override_colors/font_focus_color = Color(0.0901961, 0.168627, 0.301961, 1)
+theme_override_fonts/font = ExtResource("3_tp20a")
 theme_override_styles/normal = ExtResource("3_kecpn")
 theme_override_styles/hover = ExtResource("4_4vi3q")
 theme_override_styles/pressed = ExtResource("4_4vi3q")
