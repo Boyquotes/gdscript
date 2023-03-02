@@ -10,7 +10,7 @@ func _ready():
 	boards = load("res://scenes/boards.tscn").instantiate()
 	content_container.add_child(boards)
 	#SceneUtils.create_single_error_popup("test pop window......", self, self)
-	await  DataRepository.board_created
+	await DataRepository.board_created
 	print("main_scene _ready() end")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
