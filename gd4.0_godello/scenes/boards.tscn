@@ -53,12 +53,12 @@ text = "Personal Boards"
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer/MarginContainer/BoxContainer"]
+[node name="PersonalBoardsContainer" type="GridContainer" parent="ScrollContainer/MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 columns = 4
 
-[node name="Button" type="Button" parent="ScrollContainer/MarginContainer/BoxContainer/GridContainer"]
+[node name="Button" type="Button" parent="ScrollContainer/MarginContainer/BoxContainer/PersonalBoardsContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(170, 80)
 layout_mode = 2
@@ -94,4 +94,4 @@ theme_override_fonts/font = ExtResource("1_txqp0")
 theme_override_font_sizes/font_size = 24
 text = "Shared Boards"
 
-[connection signal="pressed" from="ScrollContainer/MarginContainer/BoxContainer/GridContainer/Button" to="." method="_on_CreateBoard_pressed"]
+[connection signal="pressed" from="ScrollContainer/MarginContainer/BoxContainer/PersonalBoardsContainer/Button" to="." method="_on_CreateBoard_pressed"]

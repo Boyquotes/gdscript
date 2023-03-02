@@ -1,5 +1,7 @@
 extends ColorRect
 
+@onready var personal_boards_container := $ScrollContainer/MarginContainer/BoxContainer/PersonalBoardsContainer
+
 func _on_CreateBoard_pressed():
 	DataRepository.create_board()
 
