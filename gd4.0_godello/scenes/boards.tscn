@@ -9,56 +9,62 @@
 [ext_resource type="Texture2D" uid="uid://bbtybcsltnven" path="res://assets/icons/users.svg" id="6_vm0or"]
 
 [node name="Boards" type="ColorRect"]
-offset_right = 1024.0
-offset_bottom = 600.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_w7y32")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 0
-offset_right = 1021.0
-offset_bottom = 600.0
-
-[node name="MarginContainer" type="Control" parent="ScrollContainer"]
+[node name="MarginContainer" type="Control" parent="."]
 layout_mode = 2
+anchors_preset = 0
+offset_right = 1024.0
+offset_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="BoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
-layout_mode = 0
+[node name="BoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
 offset_left = 123.0
 offset_top = 1.0
-offset_right = 887.0
-offset_bottom = 366.0
+offset_right = 423.0
+offset_bottom = 265.0
 
-[node name="HSpacer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/BoxContainer"]
+[node name="HSpacer" type="HBoxContainer" parent="MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/BoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer/BoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/BoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_fx1tq")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/BoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/BoxContainer/HBoxContainer"]
 self_modulate = Color(0.0901961, 0.168627, 0.301961, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_txqp0")
 theme_override_font_sizes/font_size = 24
 text = "Personal Boards"
 
-[node name="HSpacer2" type="HBoxContainer" parent="ScrollContainer/MarginContainer/BoxContainer"]
+[node name="HSpacer2" type="HBoxContainer" parent="MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 
-[node name="PersonalBoardsContainer" type="GridContainer" parent="ScrollContainer/MarginContainer/BoxContainer"]
+[node name="PersonalBoardsContainer" type="GridContainer" parent="MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
+size_flags_vertical = 3
 columns = 4
 
-[node name="Button" type="Button" parent="ScrollContainer/MarginContainer/BoxContainer/PersonalBoardsContainer"]
+[node name="Button" type="Button" parent="MarginContainer/BoxContainer/PersonalBoardsContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(170, 80)
 layout_mode = 2
@@ -73,25 +79,25 @@ theme_override_styles/focus = ExtResource("4_4vi3q")
 text = "Create new board"
 clip_text = true
 
-[node name="HSpacer3" type="HBoxContainer" parent="ScrollContainer/MarginContainer/BoxContainer"]
+[node name="HSpacer3" type="HBoxContainer" parent="MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(20, 30)
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/MarginContainer/BoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/BoxContainer"]
 custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer/BoxContainer/HBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/BoxContainer/HBoxContainer2"]
 layout_mode = 2
 texture = ExtResource("6_vm0or")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/BoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/BoxContainer/HBoxContainer2"]
 self_modulate = Color(0.0901961, 0.168627, 0.301961, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_txqp0")
 theme_override_font_sizes/font_size = 24
 text = "Shared Boards"
 
-[connection signal="pressed" from="ScrollContainer/MarginContainer/BoxContainer/PersonalBoardsContainer/Button" to="." method="_on_CreateBoard_pressed"]
+[connection signal="pressed" from="MarginContainer/BoxContainer/PersonalBoardsContainer/Button" to="." method="_on_CreateBoard_pressed"]
