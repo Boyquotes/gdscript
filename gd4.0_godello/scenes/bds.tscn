@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://1trv7q5wyfgq"]
+[gd_scene load_steps=8 format=3 uid="uid://1trv7q5wyfgq"]
 
 [ext_resource type="Texture2D" uid="uid://cocm3yhxj03wo" path="res://assets/icons/user.svg" id="1_1w5d1"]
+[ext_resource type="Script" path="res://scenes/bds.gd" id="1_owffn"]
 [ext_resource type="FontFile" uid="uid://byphkn3yqgafd" path="res://assets/fonts/font_card_title.tres" id="2_54nh0"]
 [ext_resource type="FontFile" path="res://assets/fonts/font_regular.tres" id="3_k4pso"]
 [ext_resource type="Texture2D" uid="uid://bbtybcsltnven" path="res://assets/icons/users.svg" id="3_p2ber"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_owffn")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
