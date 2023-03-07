@@ -1,8 +1,10 @@
 extends ColorRect
 
 @onready var content_container := $ContentContainer
+@onready var main_scene = $"."
 
 var boards
+var overlay
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,8 +14,19 @@ func _ready():
 	content_container.add_child(boards)
 	#SceneUtils.create_single_error_popup("test pop window......", self, self)
 	#await DataRepository.board_created
+	
+	DataRepository.board_created.connect(on_overlay)
+	#get_tree().root.connect(DataRepository.board_created, on_overlay)
+	
+	
+	
 	print("main_scene _ready() end")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func on_overlay():
+	main_scene.color = Color(55, 55, 55, 0.5)
+
+func on_deoverlay():
+	main_scene.color = Color(255, 255, 255, 255)
+
 func _process(_delta):
 	pass
