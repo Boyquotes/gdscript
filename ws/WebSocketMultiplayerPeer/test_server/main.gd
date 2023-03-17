@@ -17,7 +17,6 @@ func create_websocket_server():
 	#var error = peer.create_server(1235, "*", tlsOptions)
 	var error = peer.create_server(1235, "*")
 	print("err: ", error)
-	
 	multiplayer.multiplayer_peer = peer
 
 func generate_self_signed_certificate():
