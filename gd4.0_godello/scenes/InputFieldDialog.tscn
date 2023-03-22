@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b675jwgwmi2mb"]
+
+[node name="InputFieldDialog" type="ConfirmationDialog"]
+title = "Create Board"
+position = Vector2i(300, 200)
+size = Vector2i(300, 100)
+visible = true
+always_on_top = true
+popup_window = true
+ok_button_text = "确定"
+cancel_button_text = "取消"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 292.0
+offset_bottom = 51.0
