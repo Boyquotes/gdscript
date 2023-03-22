@@ -1,3 +1,5 @@
+# https://github.com/alfredbaudisch/Godello
+	# 原版在这里，是 godot 3.5 的
 extends ColorRect
 
 @onready var content_container := $ContentContainer
