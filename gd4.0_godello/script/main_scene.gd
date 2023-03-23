@@ -18,7 +18,7 @@ func _ready():
 	#SceneUtils.create_single_error_popup("test pop window......", self, self)
 	#await DataRepository.board_created
 	
-	DataRepository.board_created.connect(on_overlay)
+	DataRepository.board_creating.connect(on_overlay)
 	#get_tree().root.connect(DataRepository.board_created, on_overlay)
 	
 	print("main_scene _ready() end")

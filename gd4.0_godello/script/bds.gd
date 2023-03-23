@@ -5,10 +5,21 @@ extends ColorRect
 @onready var create_Button := $ScrollContainer/VBoxContainer/HBoxContainer3/GridContainer/Button
 @onready var personal_boards_container := $ScrollContainer/VBoxContainer/HBoxContainer3/GridContainer
 
+const BoardCard := preload("res://scenes/board_card.tscn")
+
 var overlay = null
 func _ready():
 	
-	for i in range(50):
+	var board_card = BoardCard.instantiate()
+	var label =  board_card.get_node("Label")
+	label.add_theme_font_size_override("font_size", 32)
+	label.add_theme_color_override("font_color", Color(100, 100, 100, 0.5))
+	label.text = "111111"
+
+	personal_boards_container.add_child(board_card)
+	personal_boards_container.move_child(board_card, 0)
+	
+	for i in range(0):
 		var btn_clone = create_Button.duplicate()
 		btn_clone.set_text(str(i))
 		personal_boards_container.add_child(btn_clone)
