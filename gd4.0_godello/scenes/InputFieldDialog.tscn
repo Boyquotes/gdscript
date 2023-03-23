@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b675jwgwmi2mb"]
+[gd_scene load_steps=2 format=3 uid="uid://b675jwgwmi2mb"]
+
+[ext_resource type="Script" path="res://scenes/InputFieldDialog.gd" id="1_6mu0d"]
 
 [node name="InputFieldDialog" type="ConfirmationDialog"]
 title = "Create Board"
@@ -9,9 +11,12 @@ always_on_top = true
 popup_window = true
 ok_button_text = "确定"
 cancel_button_text = "取消"
+script = ExtResource("1_6mu0d")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 292.0
 offset_bottom = 51.0
+
+[connection signal="confirmed" from="." to="." method="on_ok"]

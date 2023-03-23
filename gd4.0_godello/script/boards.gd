@@ -7,7 +7,7 @@ func _on_CreateBoard_pressed():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for i in range(1):
+	for i in range(10):
 		var btn_clone = create_Button.duplicate()
 		btn_clone.set_text(str(i))
 		personal_boards_container.add_child(btn_clone)

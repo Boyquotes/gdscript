@@ -12,6 +12,7 @@ var overlay
 func _ready():
 	#DisplayServer.window_set_size(Vector2i(1024, 600))
 	#boards = load("res://scenes/boards.tscn").instantiate()
+	#boards = load("res://scenes/brds.tscn").instantiate()
 	boards = load("res://scenes/bds.tscn").instantiate()
 	content_container.add_child(boards)
 	#SceneUtils.create_single_error_popup("test pop window......", self, self)
@@ -19,8 +20,6 @@ func _ready():
 	
 	DataRepository.board_created.connect(on_overlay)
 	#get_tree().root.connect(DataRepository.board_created, on_overlay)
-	
-	
 	
 	print("main_scene _ready() end")
 
