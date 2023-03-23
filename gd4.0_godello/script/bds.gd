@@ -11,14 +11,14 @@ const InputFieldDialog := preload("res://scenes/InputFieldDialog.tscn")
 var overlay = null
 func _ready():
 	
-	var board_card = BoardCard.instantiate()
-	var label =  board_card.get_node("Label")
-	label.add_theme_font_size_override("font_size", 32)
-	label.add_theme_color_override("font_color", Color(100, 100, 100, 0.5))
-	label.text = "111111"
-
-	personal_boards_container.add_child(board_card)
-	personal_boards_container.move_child(board_card, 0)
+#	var board_card = BoardCard.instantiate()
+#	var label =  board_card.get_node("Label")
+#	label.add_theme_font_size_override("font_size", 32)
+#	label.add_theme_color_override("font_color", Color(100, 100, 100, 0.5))
+#	label.text = "111111"
+#
+#	personal_boards_container.add_child(board_card)
+#	personal_boards_container.move_child(board_card, 0)
 	
 	for i in range(0):
 		var btn_clone = create_Button.duplicate()
@@ -37,3 +37,16 @@ func on_btn_press():
 	DataRepository.create_board_card()
 	var input = InputFieldDialog.instantiate()
 	scroll_container.add_child(input)
+	var name_card = await  DataRepository.board_card_name_get
+		# 等一个完成信号, 用户正确输入了卡片名
+		
+	var board_card = BoardCard.instantiate()
+	var label =  board_card.get_node("Label")
+	label.add_theme_font_size_override("font_size", 32)
+	label.add_theme_color_override("font_color", Color(100, 100, 100, 0.5))
+	label.text = name_card
+
+	personal_boards_container.add_child(board_card)
+	personal_boards_container.move_child(board_card, 0)
+		
+	DataRepository.create_board_card_done()
