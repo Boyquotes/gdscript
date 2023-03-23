@@ -9,8 +9,7 @@ func _ready():
 func on_ok():
 	if line.text == "":
 		return
-	
-	pass
+	DataRepository.create_board_card_done()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

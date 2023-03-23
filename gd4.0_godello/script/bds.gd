@@ -6,6 +6,7 @@ extends ColorRect
 @onready var personal_boards_container := $ScrollContainer/VBoxContainer/HBoxContainer3/GridContainer
 
 const BoardCard := preload("res://scenes/board_card.tscn")
+const InputFieldDialog := preload("res://scenes/InputFieldDialog.tscn")
 
 var overlay = null
 func _ready():
@@ -33,4 +34,6 @@ func on_size_changed():
 	scroll_container.set_size(DisplayServer.window_get_size())
 	
 func on_btn_press():
-	DataRepository.create_board()
+	DataRepository.create_board_card()
+	var input = InputFieldDialog.instantiate()
+	scroll_container.add_child(input)

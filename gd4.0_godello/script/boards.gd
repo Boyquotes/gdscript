@@ -3,7 +3,7 @@ extends ColorRect
 @onready var personal_boards_container := $MarginContainer/BoxContainer/PersonalBoardsContainer
 @onready var create_Button := $MarginContainer/BoxContainer/PersonalBoardsContainer/Button
 func _on_CreateBoard_pressed():
-	DataRepository.create_board()
+	DataRepository.create_board_card()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

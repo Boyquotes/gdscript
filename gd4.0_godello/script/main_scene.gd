@@ -19,6 +19,7 @@ func _ready():
 	#await DataRepository.board_created
 	
 	DataRepository.board_creating.connect(on_overlay)
+	DataRepository.board_created.connect(on_deoverlay)
 	#get_tree().root.connect(DataRepository.board_created, on_overlay)
 	
 	print("main_scene _ready() end")
