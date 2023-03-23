@@ -39,7 +39,7 @@ func on_btn_press():
 	scroll_container.add_child(input)
 	var name_card = await  DataRepository.board_card_name_get
 		# 等一个完成信号, 用户正确输入了卡片名
-		
+	
 	var board_card = BoardCard.instantiate()
 	var label =  board_card.get_node("Label")
 	label.add_theme_font_size_override("font_size", 32)

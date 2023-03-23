@@ -3,6 +3,7 @@ extends Node
 signal board_creating()
 signal board_created()
 signal board_card_name_get(name_card:String)
+	# 用户完成了卡片名字的输入
 
 func create_board_card():
 	#add_board(board)
