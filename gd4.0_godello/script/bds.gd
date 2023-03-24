@@ -39,6 +39,8 @@ func on_btn_press():
 	scroll_container.add_child(input)
 	var name_card = await  DataRepository.board_card_name_get
 		# 等一个完成信号, 用户正确输入了卡片名
+	if name_card == "":
+		return DataRepository.create_board_card_done()
 	
 	var board_card = BoardCard.instantiate()
 	var label =  board_card.get_node("Label")

@@ -20,4 +20,5 @@ offset_right = 292.0
 offset_bottom = 51.0
 caret_blink = true
 
+[connection signal="canceled" from="." to="." method="on_cancel"]
 [connection signal="confirmed" from="." to="." method="on_ok"]
