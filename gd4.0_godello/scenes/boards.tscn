@@ -1,20 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://cf27qxypm2765"]
+[gd_scene load_steps=8 format=3 uid="uid://dis0c8tkjuxyx"]
 
-[ext_resource type="Texture2D" uid="uid://cocm3yhxj03wo" path="res://assets/icons/user.svg" id="1_1w5d1"]
-[ext_resource type="Script" path="res://script/bds.gd" id="1_h2sn2"]
-[ext_resource type="FontFile" uid="uid://byphkn3yqgafd" path="res://assets/fonts/font_card_title.tres" id="2_54nh0"]
-[ext_resource type="FontFile" path="res://assets/fonts/font_regular.tres" id="3_k4pso"]
-[ext_resource type="Texture2D" uid="uid://bbtybcsltnven" path="res://assets/icons/users.svg" id="3_p2ber"]
-[ext_resource type="StyleBox" path="res://assets/style_board_card_button.tres" id="4_pqtf2"]
-[ext_resource type="StyleBox" path="res://assets/style_board_card_button_hover.tres" id="5_b01kv"]
+[ext_resource type="Texture2D" uid="uid://cocm3yhxj03wo" path="res://assets/icons/user.svg" id="1_fx1tq"]
+[ext_resource type="FontFile" uid="uid://byphkn3yqgafd" path="res://assets/fonts/font_card_title.tres" id="1_txqp0"]
+[ext_resource type="Script" path="res://script/boards.gd" id="1_w7y32"]
+[ext_resource type="StyleBox" path="res://assets/style_board_card_button.tres" id="3_kecpn"]
+[ext_resource type="FontFile" path="res://assets/fonts/font_regular.tres" id="3_tp20a"]
+[ext_resource type="StyleBox" path="res://assets/style_board_card_button_hover.tres" id="4_4vi3q"]
+[ext_resource type="Texture2D" uid="uid://bbtybcsltnven" path="res://assets/icons/users.svg" id="6_vm0or"]
 
-[node name="bds" type="ColorRect"]
+[node name="boards" type="ColorRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_h2sn2")
+script = ExtResource("1_w7y32")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
@@ -42,14 +42,14 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer2/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_1w5d1")
+texture = ExtResource("1_fx1tq")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2/HBoxContainer"]
 self_modulate = Color(0.0901961, 0.168627, 0.301961, 1)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_54nh0")
+theme_override_fonts/font = ExtResource("1_txqp0")
 theme_override_font_sizes/font_size = 24
 text = "Personal Boards"
 
@@ -71,12 +71,12 @@ custom_minimum_size = Vector2(170, 80)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.941176, 0.94902, 0.960784, 1)
 theme_override_colors/font_hover_color = Color(0.0901961, 0.168627, 0.301961, 1)
-theme_override_fonts/font = ExtResource("3_k4pso")
-theme_override_styles/normal = ExtResource("4_pqtf2")
-theme_override_styles/hover = ExtResource("5_b01kv")
-theme_override_styles/pressed = ExtResource("5_b01kv")
-theme_override_styles/disabled = ExtResource("5_b01kv")
-theme_override_styles/focus = ExtResource("5_b01kv")
+theme_override_fonts/font = ExtResource("3_tp20a")
+theme_override_styles/normal = ExtResource("3_kecpn")
+theme_override_styles/hover = ExtResource("4_4vi3q")
+theme_override_styles/pressed = ExtResource("4_4vi3q")
+theme_override_styles/disabled = ExtResource("4_4vi3q")
+theme_override_styles/focus = ExtResource("4_4vi3q")
 text = "Create new board"
 clip_text = true
 
@@ -98,14 +98,14 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer3"]
 layout_mode = 2
-texture = ExtResource("3_p2ber")
+texture = ExtResource("6_vm0or")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer3"]
 self_modulate = Color(0.0901961, 0.168627, 0.301961, 1)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_54nh0")
+theme_override_fonts/font = ExtResource("1_txqp0")
 theme_override_font_sizes/font_size = 24
 text = "Shared Boards"
 
