@@ -5,6 +5,7 @@ extends ColorRect
 @onready var create_Button := $ScrollContainer/VBoxContainer/HBoxContainer3/GridContainer/Button
 @onready var personal_boards_container := $ScrollContainer/VBoxContainer/HBoxContainer3/GridContainer
 
+
 const BoardCard := preload("res://scenes/board_card.tscn")
 const InputFieldDialog := preload("res://scenes/InputFieldDialog.tscn")
 

@@ -41,23 +41,23 @@ func go_to_board():
 	emit_signal("change_route_requested", Routes.BOARD)
 
 
-func create_single_error_popup(message : String, _focus_after_close : Control, parent : Node):
-	if popup:
-		popup.queue_free()
-
-	popup = load("res://scenes/single_button_popup.tscn").instantiate() #.instance()
-	popup.get_node("Label").set_text(message)
-	parent.add_child(popup)
-	popup.popup_centered()
-	popup.get_node("Button").grab_focus()
-	#popup.get_close_button().grab_focus()
-
-	await popup.close_requested
-	#yield(popup, "tree_exited")
-
-	if popup:
-		popup.queue_free()
-	popup = null
+#func create_single_error_popup(message : String, _focus_after_close : Control, parent : Node):
+#	if popup:
+#		popup.queue_free()
+#
+#	popup = load("res://scenes/single_button_popup.tscn").instantiate() #.instance()
+#	popup.get_node("Label").set_text(message)
+#	parent.add_child(popup)
+#	popup.popup_centered()
+#	popup.get_node("Button").grab_focus()
+#	#popup.get_close_button().grab_focus()
+#
+#	await popup.close_requested
+#	#yield(popup, "tree_exited")
+#
+#	if popup:
+#		popup.queue_free()
+#	popup = null
 	#focus_after_close.grab_focus()
 
 #
