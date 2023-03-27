@@ -9,7 +9,9 @@ extends ColorRect
 const BoardCard := preload("res://scenes/board_card.tscn")
 const InputFieldDialog := preload("res://scenes/InputFieldDialog.tscn")
 
-var overlay = null
+const Board := preload("res://scenes/board.tscn")
+
+var board = null
 func _ready():
 	
 #	var board_card = BoardCard.instantiate()
@@ -63,6 +65,12 @@ func on_btn_press():
 
 func on_buttn_click(sender):
 	var t = sender.get_node("Label").text
+	
+	if board:
+		board.free()
+	
+	# 实例化一个场景，然后传给主场景，让它加入自已的 child
+	
 	DataRepository.switch_Scene(sender)
 	pass
 
