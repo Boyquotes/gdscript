@@ -32,10 +32,11 @@ func on_overlay():
 func on_deoverlay():
 	main_scene.color = Color(255, 255, 255, 255)
 
-func  on_switchScene(sender):
+func  on_switchScene(sender, scene):
 	var t = sender.get_node("Label").text
 #	content_container.remove_child(boards)
 	boards.set_visible(false)
+	content_container.add_child(scene)
 	
 	pass
 

@@ -70,7 +70,8 @@ func on_buttn_click(sender):
 		board.free()
 	
 	# 实例化一个场景，然后传给主场景，让它加入自已的 child
+	board = Board.instantiate()
 	
-	DataRepository.switch_Scene(sender)
+	DataRepository.switch_Scene(sender, board)
 	pass
 
