@@ -48,8 +48,21 @@ func on_btn_press():
 	label.add_theme_font_size_override("font_size", 32)
 	label.add_theme_color_override("font_color", Color(100, 100, 100, 0.5))
 	label.text = name_card
+	
+	var callable = Callable(self, "on_buttn_click").bind(board_card)
+	board_card.connect("pressed", callable)
+	
+	var t = board_card.get_node("Label").text
+
+#	board_card.pressed.connect(on_buttn_click)
 
 	personal_boards_container.add_child(board_card)
 	personal_boards_container.move_child(board_card, 0)
 		
 	DataRepository.create_board_card_done()
+
+func on_buttn_click(sender):
+	var t = sender.get_node("Label").text
+	DataRepository.switch_Scene(sender)
+	pass
+

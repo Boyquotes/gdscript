@@ -22,6 +22,8 @@ func _ready():
 	DataRepository.board_created.connect(on_deoverlay)
 	#get_tree().root.connect(DataRepository.board_created, on_overlay)
 	
+	DataRepository.switchScene.connect(on_switchScene)
+	
 	print("main_scene _ready() end")
 
 func on_overlay():
@@ -29,6 +31,13 @@ func on_overlay():
 
 func on_deoverlay():
 	main_scene.color = Color(255, 255, 255, 255)
+
+func  on_switchScene(sender):
+	var t = sender.get_node("Label").text
+#	content_container.remove_child(boards)
+	boards.set_visible(false)
+	
+	pass
 
 func _process(_delta):
 	pass
