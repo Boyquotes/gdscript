@@ -92,4 +92,5 @@ text = "Alfred"
 
 [node name="ContentContainer" type="BoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
