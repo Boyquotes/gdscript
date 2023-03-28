@@ -2,7 +2,7 @@
 	# 原版在这里，是 godot 3.5 的
 extends ColorRect
 
-@onready var content_container := $ContentContainer
+@onready var content_container := $VBoxContainer/ContentContainer
 @onready var main_scene = $"."
 
 var boards
@@ -36,6 +36,11 @@ func  on_switchScene(sender, scene):
 	var t = sender.get_node("Label").text
 #	content_container.remove_child(boards)
 	boards.set_visible(false)
+	var size = DisplayServer.window_get_size() # 1920, 1017
+	#scene.set_size(size)
+	scene.layout_mode = 2
+	scene.size_flags_horizontal = 3
+	scene.size_flags_vertical = 3
 	content_container.add_child(scene)
 	
 	pass
