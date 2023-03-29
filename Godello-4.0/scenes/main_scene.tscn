@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://crjukt8mudgu6"]
+
+[ext_resource type="Script" path="res://scripts/main_scene.gd" id="1"]
+[ext_resource type="StyleBox" path="res://assets/style_topbar_button_normal.tres" id="2_i255c"]
+[ext_resource type="StyleBox" path="res://assets/style_topbar_button_hover.tres" id="3_8ihf5"]
+[ext_resource type="StyleBox" path="res://assets/style_topbar_button_pressed.tres" id="4_elb6p"]
+[ext_resource type="Texture2D" uid="uid://cxroojhv8olnw" path="res://assets/icons/home-white.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://btypa0ft2j1xl" path="res://assets/icons/sign-out-white.png" id="7"]
+
+[node name="MainScene" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="ContentContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TopBar" type="ColorRect" parent="ContentContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.00784314, 0.415686, 0.654902, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContentContainer/TopBar"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+
+[node name="HomeButton" type="Button" parent="ContentContainer/TopBar/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = ExtResource("2_i255c")
+theme_override_styles/hover = ExtResource("3_8ihf5")
+theme_override_styles/pressed = ExtResource("4_elb6p")
+theme_override_styles/focus = ExtResource("4_elb6p")
+text = "Boards"
+icon = ExtResource("6")
+expand_icon = true
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ContentContainer/TopBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UserButton" type="Button" parent="ContentContainer/TopBar/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Alfred"
+expand_icon = true
+
+[node name="LogOutButton" type="Button" parent="ContentContainer/TopBar/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Log Out"
+icon = ExtResource("7")
+expand_icon = true
+
+[connection signal="pressed" from="ContentContainer/TopBar/HBoxContainer/HomeButton" to="." method="_on_HomeButton_pressed"]
+[connection signal="pressed" from="ContentContainer/TopBar/HBoxContainer/LogOutButton" to="." method="_on_LogOutButton_pressed"]

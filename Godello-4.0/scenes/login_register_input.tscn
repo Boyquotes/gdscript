@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/style_rounded_input.tres" type="StyleBox" id=1]
+
+[node name="ConfirmPasswordInput" type="LineEdit"]
+offset_top = 186.0
+offset_right = 350.0
+offset_bottom = 244.0
+custom_minimum_size = Vector2( 0, 58 )
+size_flags_horizontal = 3
+custom_styles/normal = ExtResource( 1 )
+placeholder_text = "Confirm password"
+__meta__ = {
+"_edit_use_anchors_": false
+}
