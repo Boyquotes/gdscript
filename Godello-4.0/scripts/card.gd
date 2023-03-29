@@ -9,7 +9,8 @@ var model : CardModel : get = get_model, set = set_model
 var is_dragged := false : set = set_is_dragged
 var is_dragged_to_list : set = set_dragged_to_list
 var is_any_data_dragged := false
-var in_archives := false setget set_is_in_archives # Listed in the Archived Cards?
+var in_archives = false : 
+	set = set_is_in_archives # Listed in the Archived Cards?
 
 @onready var content_container := $CardContent
 @onready var content_padding_container := $CardContent/InnerPadding
@@ -25,7 +26,8 @@ var in_archives := false setget set_is_in_archives # Listed in the Archived Card
 
 
 func _ready():
-	set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+	#set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+	pass
 
 # warning-ignore:return_value_discarded
 	Events.connect("card_dragged",Callable(self,"_on_card_dragged"))

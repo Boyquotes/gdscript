@@ -16,10 +16,11 @@ func _ready():
 
 
 func _input(event):
-	if event is InputEventKey and not event.is_pressed():
-		match event.get_keycode():
-			KEY_ESCAPE:
-				hide()
+#	if event is InputEventKey and not event.is_pressed():
+#		match event.get_keycode():
+#			KEY_ESCAPE:
+#				hide()
+	pass
 
 
 func _set_mode(value):
