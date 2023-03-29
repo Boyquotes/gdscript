@@ -75,7 +75,7 @@ func create_delete_confirm_popup(parent : Node, confirm_target : Object, binds :
 func create_input_field_dialog(mode, board, list = null):
 	var overlay = ColorRect.new()
 	overlay.color = Color(0, 0, 0, 0.5)
-	overlay.set_anchors_and_offsets_preset(Control.PRESET_CENTER, Control.PRESET_MODE_KEEP_SIZE)
+	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT, Control.PRESET_MODE_KEEP_SIZE)
 	get_parent().add_child(overlay)
 
 	var dialog = InputFieldDialog.instantiate()
