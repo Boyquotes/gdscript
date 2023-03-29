@@ -79,7 +79,14 @@ func create_input_field_dialog(mode, board, list = null):
 	get_parent().add_child(overlay)
 
 	var dialog = InputFieldDialog.instantiate()
-#	dialog.popup_window = true
+
+	var size = DisplayServer.window_get_size() 
+	var x = size.x / 2
+	var y = size.y / 2
+	
+	dialog.position = Vector2i(x, y)
+	
+
 	overlay.add_child(dialog)
 	dialog.set_board(board)
 	dialog.set_mode(mode)
