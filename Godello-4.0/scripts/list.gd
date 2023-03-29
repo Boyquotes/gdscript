@@ -153,7 +153,7 @@ func _on_card_dragged(_node, _model):
 	is_any_data_dragged = true
 
 
-func _on_card_dropped(_drop_data, _into_list):
+func _on_card_dropped(__drop_data, _into_list):
 	is_any_data_dragged = false
 
 
@@ -162,11 +162,11 @@ func _on_list_dragged(_node, _model):
 	set("mouse_filter", MOUSE_FILTER_PASS)
 
 
-func _on_list_dropped(_drop_data):
+func _on_list_dropped(__drop_data):
 	is_any_data_dragged = false
 	set("mouse_filter", MOUSE_FILTER_STOP)
 
-	if _drop_data and _drop_data["node"] == self:
+	if __drop_data and __drop_data["node"] == self:
 		set_is_dragged(false)
 
 

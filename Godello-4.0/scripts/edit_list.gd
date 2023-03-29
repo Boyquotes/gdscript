@@ -15,7 +15,7 @@ func _ready():
 	set_hide_on_ok(false)
 
 
-func _input(event):
+func _input(_event):
 #	if event is InputEventKey and not event.is_pressed():
 #		match event.get_keycode():
 #			KEY_ESCAPE:
@@ -48,28 +48,28 @@ func _set_mode(value):
 
 
 func save():
-	var title = Utils.clean_input_text(input_field.get_text())
+	var _title = Utils.clean_input_text(input_field.get_text())
 
-	if Utils.validate_not_empty_text(title, input_field.get_placeholder(), input_field, self):
+	if Utils.validate_not_empty_text(_title, input_field.get_placeholder(), input_field, self):
 		match mode:
 			SceneUtils.InputFieldDialogMode.EDIT_LIST:
-				list.set_title(title)
+				list.set_title(_title)
 
 			SceneUtils.InputFieldDialogMode.EDIT_BOARD:
-				board.set_title(title)
+				board.set_title(_title)
 
 			SceneUtils.InputFieldDialogMode.CREATE_LIST:
-				DataRepository.create_list(board, title)
+				DataRepository.create_list(board, _title)
 
 			SceneUtils.InputFieldDialogMode.CREATE_BOARD:
-				board.set_title(title)
+				board.set_title(_title)
 				DataRepository.create_board(board)
 
 			SceneUtils.InputFieldDialogMode.ADD_BOARD_MEMBER:
 				if not Utils.validate_email_field(input_field, self):
 					return
 
-				DataRepository.add_board_member(title, board)
+				DataRepository.add_board_member(_title, board)
 
 		hide()
 

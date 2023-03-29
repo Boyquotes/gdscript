@@ -17,11 +17,11 @@ func set_data(_node, _model : ListModel):
 	set_title(_model.title)
 
 	# TODO: add utility functional methods to help in situations like this (map, filter, count, etc)
-	var size = 0
+	var _size = 0
 	for card in _model.cards:
-		size += 1 if not card.is_archived else 0
+		_size += 1 if not card.is_archived else 0
 
-	if size == 0:
+	if _size == 0:
 		card_template.set_visible(false)
 
 

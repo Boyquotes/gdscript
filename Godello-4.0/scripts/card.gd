@@ -68,8 +68,8 @@ func set_model(_model : CardModel):
 	if not model.is_archived and in_archives:
 		queue_free()
 	else:
-		var is_visible = not model.is_archived or (model.is_archived and in_archives)
-		set_visible(is_visible)
+		var _is_visible = not model.is_archived or (model.is_archived and in_archives)
+		set_visible(_is_visible)
 
 		title_label.set_text(model.title)
 
@@ -116,9 +116,9 @@ func _get_drag_data(_pos):
 	return card
 
 
-func set_edit_icon_visibility(is_visible : bool):
-	edit_icon.set_visible(is_visible)
-	split.set_visible(not is_visible)
+func set_edit_icon_visibility(_is_visible : bool):
+	edit_icon.set_visible(_is_visible)
+	split.set_visible(not _is_visible)
 
 
 func _set_indicators(is_dragging := false):

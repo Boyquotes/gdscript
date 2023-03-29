@@ -32,10 +32,10 @@ func remove_cards():
 
 
 func remove_card(card):
-	var card_idx = cards.find(card)
+	#var card_idx = cards.find(card)
 #	if card_idx != -1:
 #		cards.remove(card_idx)
-
+	
 	if !cards_by_id.erase(card.id):
 		print("list_model.gd:39 : card with id %d not found" % card.id)
 

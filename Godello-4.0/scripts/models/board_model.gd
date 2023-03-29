@@ -51,7 +51,7 @@ func remove_lists():
 
 
 func remove_list(list):
-	var list_idx = lists.find(list)
+#	var list_idx = lists.find(list)
 #	if list_idx != -1:
 #		lists.remove(list_idx)
 
@@ -76,7 +76,7 @@ func _map_lists_by_id():
 
 
 func _to_string():
-	return JSON.new().stringify({
+	return JSON.stringify({
 		"id": id,
 		"title": title
 	})

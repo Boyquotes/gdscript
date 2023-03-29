@@ -48,11 +48,12 @@ func count_tasks_done():
 	return done
 
 
-func delete_task(task):
-	var task_idx = tasks.find(task)
+func delete_task(_task):
+#	var task_idx = tasks.find(task)
 #	if task_idx != -1:
 #		tasks.remove(task_idx)
 #		_notify_updated()
+	pass
 
 
 func archive():
@@ -75,7 +76,7 @@ func _notify_updated(was_draft := false, was_archived := false):
 
 func _to_string():
 	# TODO: add tasks
-	return JSON.new().stringify({
+	return JSON.stringify({
 		"id": id,
 		"title": title,
 		"description": description,
