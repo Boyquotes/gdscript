@@ -13,6 +13,7 @@ var lists_by_id : Dictionary = {}
 
 
 func _init(_id : String,_owner : UserModel,_is_public := false,_title := "",_lists := []):
+	super(ModelTypes.BOARD, _id)
 	title = _title
 	user_owner = _owner
 	is_public = _is_public

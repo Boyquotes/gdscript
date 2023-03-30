@@ -10,6 +10,7 @@ var is_draft := false : set = set_draft
 
 
 func _init(_id : String,_list_id : String,_title : String = "",_description : String = ""):
+	super(ModelTypes.CARD, _id)
 	list_id = _list_id
 	title = _title
 	description = _description

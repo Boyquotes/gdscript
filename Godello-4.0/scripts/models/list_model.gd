@@ -8,6 +8,7 @@ var board_id : String = ""
 
 
 func _init(_id : String,_board_id : String,_title : String,_cards : Array = []):
+	super(ModelTypes.LIST, _id)
 	title = _title
 	board_id = _board_id
 	cards = _cards
