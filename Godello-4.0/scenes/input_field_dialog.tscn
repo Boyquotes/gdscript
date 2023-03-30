@@ -12,7 +12,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 192.0
+offset_right = -8.0
 offset_bottom = 55.0
 size_flags_horizontal = 3
 
@@ -23,6 +23,7 @@ placeholder_text = "List Name"
 caret_blink = true
 
 [connection signal="about_to_popup" from="." to="." method="_on_InputFieldDialog_about_to_show"]
+[connection signal="canceled" from="." to="." method="_on_canceled"]
 [connection signal="confirmed" from="." to="." method="_on_InputFieldDialog_confirmed"]
 [connection signal="custom_action" from="." to="." method="_on_InputFieldDialog_custom_action"]
 [connection signal="gui_input" from="MarginContainer/TextEdit" to="." method="_on_TextEdit_gui_input"]

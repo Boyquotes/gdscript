@@ -10,6 +10,7 @@ var _mode = SceneUtils.InputFieldDialogMode.CREATE_LIST : set = _set_mode
 
 @onready var input_field := $MarginContainer/TextEdit
 
+signal hided
 
 func _ready():
 	set_hide_on_ok(false)
@@ -72,6 +73,7 @@ func save():
 				DataRepository.add_board_member(_title, board)
 
 		hide()
+		hided.emit()
 
 
 func set_board(_model):
@@ -125,3 +127,7 @@ func _on_delete_confirmed(_action):
 		SceneUtils.InputFieldDialogMode.EDIT_BOARD:
 			DataRepository.delete_board(board)
 			queue_free()
+
+
+func _on_canceled():
+	pass # Replace with function body.
