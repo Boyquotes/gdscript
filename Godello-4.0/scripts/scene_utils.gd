@@ -41,7 +41,7 @@ func go_to_board():
 	emit_signal("change_route_requested", Routes.BOARD)
 
 
-func create_single_error_popup(message : String, focus_after_close : Control, parent : Node):
+func create_single_error_popup(message : String, _focus_after_close : Control, parent : Node):
 	if popup:
 		popup.queue_free()
 
@@ -49,14 +49,14 @@ func create_single_error_popup(message : String, focus_after_close : Control, pa
 	popup.get_node("Label").set_text(message)
 	parent.add_child(popup)
 	popup.popup_centered()
-	popup.get_close_button().grab_focus()
+	#popup.get_close_button().grab_focus()
 
 	await popup.tree_exited
 
 	if popup:
 		popup.queue_free()
 	popup = null
-	focus_after_close.grab_focus()
+	#focus_after_close.grab_focus()
 
 
 func create_delete_confirm_popup(parent : Node, confirm_target : Object, binds := [], title := "Are you sure?"):
