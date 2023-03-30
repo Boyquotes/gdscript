@@ -202,8 +202,8 @@ func _reset_checkitem_edit_container():
 	checkitem_create_container.set_visible(true)
 	checkitem_edit_container.set_visible(false)
 
-	if checkitem_edit_container.get_parent() != checklist_content:
-		checkitem_edit_container.get_parent().remove_child(checkitem_edit_container)
+#	if checkitem_edit_container.get_parent() != checklist_content:
+#		checkitem_edit_container.get_parent().remove_child(checkitem_edit_container)
 #		checklist_content.add_sibling(checkitem_create_container, checkitem_edit_container)
 
 
