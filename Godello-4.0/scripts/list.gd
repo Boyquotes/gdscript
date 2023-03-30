@@ -54,7 +54,7 @@ func _unhandled_input(event):
 		set_is_dragged(false)
 
 
-func _set_model(_model : ListModel, shallow_update := false):
+func set_model(_model : ListModel, shallow_update := false):
 	model = _model
 	set_name("List_" + model.id)
 
@@ -141,7 +141,7 @@ func _on_card_created(_model):
 
 func _on_list_updated(_model):
 	if _model.id == model.id:
-		_set_model(_model, true)
+		set_model(_model, true)
 
 
 func _on_list_deleted(_model):

@@ -79,7 +79,8 @@ func set_card(_model : CardModel):
 
 func set_list(_model : ListModel):
 	list = _model
-	subtitle_label.set_bbcode("in list [u]" + list.title + "[/u]")
+#	subtitle_label.set_bbcode("in list [u]" + list.title + "[/u]")
+	subtitle_label.text = "in list [u]" + list.title + "[/u]"
 
 
 func _on_CloseButton_pressed():
