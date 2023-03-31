@@ -1,36 +1,19 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://assets/style_panel_list_dragged.tres" type="StyleBox" id=1]
+[gd_scene format=3 uid="uid://bipu6s8du8m2j"]
 
 [node name="ListPlaceholder" type="PanelContainer"]
+custom_minimum_size = Vector2(280, 0)
+anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 252.0
-custom_minimum_size = Vector2( 280, 0 )
-mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+mouse_filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 280.0
-offset_bottom = 600.0
-mouse_filter = 1
+layout_mode = 2
 size_flags_vertical = 3
-custom_constants/offset_right = 8
-custom_constants/offset_top = 8
-custom_constants/offset_left = 8
-custom_constants/offset_bottom = 8
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VerticalContent" type="VBoxContainer" parent="MarginContainer"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 272.0
-offset_bottom = 592.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
