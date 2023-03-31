@@ -1,14 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0bn5mqq7i847"]
+[gd_scene load_steps=6 format=3 uid="uid://b0bn5mqq7i847"]
 
-[ext_resource type="PackedScene" path="res://scenes/title_container.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://xjsltc2k7ln3" path="res://scenes/title_container.tscn" id="2"]
+[ext_resource type="StyleBox" path="res://assets/style_panel_card.tres" id="2_twyt8"]
 [ext_resource type="Script" path="res://scripts/card.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://tg0tkrltdrff" path="res://assets/icons/description.svg" id="5"]
 [ext_resource type="Texture2D" uid="uid://b8avi1tkv88mu" path="res://assets/icons/checklist.svg" id="6"]
 
 [node name="Card" type="MarginContainer"]
 custom_minimum_size = Vector2(240, 40)
+offset_right = 244.0
+offset_bottom = 74.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 0
 script = ExtResource("3")
 
 [node name="CardContent" type="PanelContainer" parent="."]
@@ -17,10 +24,15 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_twyt8")
 
 [node name="InnerPadding" type="MarginContainer" parent="CardContent"]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CardContent/InnerPadding"]
 layout_mode = 2
@@ -32,6 +44,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Split" parent="CardContent/InnerPadding/VBoxContainer/TitleContainer" index="1"]
+visible = true
 layout_mode = 2
 
 [node name="EditIcon" parent="CardContent/InnerPadding/VBoxContainer/TitleContainer" index="2"]
@@ -46,7 +59,7 @@ custom_minimum_size = Vector2(14, 14)
 layout_mode = 2
 texture = ExtResource("5")
 expand_mode = 1
-stretch_mode = 6
+stretch_mode = 5
 flip_v = true
 
 [node name="DescriptionSep" type="HSeparator" parent="CardContent/InnerPadding/VBoxContainer/IndicatorsContainer"]
@@ -54,11 +67,12 @@ custom_minimum_size = Vector2(8, 0)
 layout_mode = 2
 
 [node name="ChecklistIcon" type="TextureRect" parent="CardContent/InnerPadding/VBoxContainer/IndicatorsContainer"]
+clip_contents = true
 custom_minimum_size = Vector2(14, 14)
 layout_mode = 2
 texture = ExtResource("6")
 expand_mode = 1
-stretch_mode = 6
+stretch_mode = 5
 
 [node name="ChecklistCountLabel" type="Label" parent="CardContent/InnerPadding/VBoxContainer/IndicatorsContainer"]
 custom_minimum_size = Vector2(0, 14)

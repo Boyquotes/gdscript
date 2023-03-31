@@ -48,8 +48,8 @@ func _enter_tree():
 		input_event.alt = true
 	#if SHORTCUT_MODIFIERS & KEY_MASK_CMD:
 	#	input_event.command = true
-	if SHORTCUT_MODIFIERS & KEY_MASK_CTRL:
-		input_event.control = true
+#	if SHORTCUT_MODIFIERS & KEY_MASK_CTRL:
+#		input_event.control = true
 	if SHORTCUT_MODIFIERS & KEY_MASK_META:
 		input_event.meta = true
 	if SHORTCUT_MODIFIERS & KEY_MASK_SHIFT:
