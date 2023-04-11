@@ -119,6 +119,7 @@ func _get_drag_data(_pos):
 func set_edit_icon_visibility(_is_visible : bool):
 	edit_icon.set_visible(_is_visible)
 	split.set_visible(not _is_visible)
+	#pass
 
 
 func _set_indicators(is_dragging := false):

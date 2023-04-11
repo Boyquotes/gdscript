@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://cupbp04cywhdp"]
+
+[ext_resource type="Script" path="res://scripts/list.gd" id="1_8pjmo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0e06x"]
+load_path = "res://.godot/imported/dots.svg-a0c7959362e12a4873169ee22a237fea.ctex"
+
+[node name="List" type="PanelContainer"]
+custom_minimum_size = Vector2(280, 0)
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 252.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_8pjmo")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VerticalContent" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TitleContainer" type="HBoxContainer" parent="MarginContainer/VerticalContent"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VerticalContent/TitleContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "List Title"
+
+[node name="ListActionsButton" type="Button" parent="MarginContainer/VerticalContent/TitleContainer"]
+self_modulate = Color(1, 1, 1, 0.52549)
+custom_minimum_size = Vector2(32, 18)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = SubResource("CompressedTexture2D_0e06x")
+expand_icon = true
+
+[node name="CardContainerScroll" type="ScrollContainer" parent="MarginContainer/VerticalContent"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardContainer" type="VBoxContainer" parent="MarginContainer/VerticalContent/CardContainerScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AddCardButton" type="Button" parent="MarginContainer/VerticalContent"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "+ Add a card"

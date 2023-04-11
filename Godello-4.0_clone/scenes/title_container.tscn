@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://x8jvpjtyb85k"]
+
+[ext_resource type="Texture2D" uid="uid://c1m2ircuox4se" path="res://assets/icons/toolPencil.png" id="1"]
+
+[node name="TitleContainer" type="HBoxContainer"]
+offset_right = 224.0
+offset_bottom = 22.0
+pivot_offset = Vector2(-661, -267)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Card Title"
+
+[node name="Split" type="HSplitContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+dragger_visibility = 1
+
+[node name="EditIcon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+texture = ExtResource("1")
+expand_mode = 1
+stretch_mode = 5
