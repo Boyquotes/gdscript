@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6alh2e0n1ued"]
+
+[ext_resource type="Script" path="res://scripts/card_mouse_preview.gd" id="2"]
+
+[node name="Card" type="MarginContainer"]
+custom_minimum_size = Vector2(240, 40)
+rotation = 3.5
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2")
+
+[node name="CardContent" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(240, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="InnerPadding" type="MarginContainer" parent="CardContent"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CardContent/InnerPadding"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CardContent/InnerPadding/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Card Title"
+
+[node name="Split" type="HSplitContainer" parent="CardContent/InnerPadding/HBoxContainer"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+dragger_visibility = 1
