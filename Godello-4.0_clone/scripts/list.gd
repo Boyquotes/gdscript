@@ -10,6 +10,8 @@ func _ready():
 		card_container.add_child(card_element)
 	
 func _get_drag_data(_pos):
+	var preview = cardPreview.instantiate()
+	set_drag_preview(preview)
 	return { "cardID":"001" }
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
