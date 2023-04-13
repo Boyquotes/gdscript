@@ -90,8 +90,8 @@ func _get_drag_data(_pos):
 	get_parent().add_child(list)
 	list.set_data(self, get_model())
 	get_parent().remove_child(list)
-	set_drag_preview(list)
 
+	set_drag_preview(list)
 	set_is_dragged()
 
 	Events.emit_signal("list_dragged", self, get_model())

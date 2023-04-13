@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8jmy14wu0um7"]
+
+[ext_resource type="PackedScene" uid="uid://cupbp04cywhdp" path="res://scenes/list.tscn" id="1_sm4v6"]
+
+[node name="ListContainerScroll" type="ScrollContainer"]
+custom_minimum_size = Vector2(1152, 612)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ListContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(280, 612)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="List" parent="ListContainer" instance=ExtResource("1_sm4v6")]
+layout_mode = 2
+
+[node name="AddListButton" type="Button" parent="ListContainer"]
+custom_minimum_size = Vector2(280, 40)
+layout_mode = 2
+size_flags_vertical = 0
+text = "+ Add List"
