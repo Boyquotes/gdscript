@@ -75,4 +75,7 @@ text = "0/1"
 custom_minimum_size = Vector2(8, 23)
 layout_mode = 2
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+
 [editable path="CardContent/InnerPadding/VBoxContainer/TitleContainer"]
