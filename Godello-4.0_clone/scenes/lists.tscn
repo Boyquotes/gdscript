@@ -21,6 +21,9 @@ size_flags_vertical = 3
 [node name="List" parent="ListContainer" instance=ExtResource("1_sm4v6")]
 layout_mode = 2
 
+[node name="List2" parent="ListContainer" instance=ExtResource("1_sm4v6")]
+layout_mode = 2
+
 [node name="AddListButton" type="Button" parent="ListContainer"]
 custom_minimum_size = Vector2(280, 40)
 layout_mode = 2
