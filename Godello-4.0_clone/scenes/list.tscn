@@ -45,6 +45,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="CardContainer" type="VBoxContainer" parent="MarginContainer/VerticalContent/CardContainerScroll"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 

@@ -54,12 +54,47 @@ func _drop_data(pos, card_draged):
 			last_distance = distance
 			closest_child = child
 	
-	var index = -1
+	
+	var is_other_list = true  # 是否是从其他 list 拖过来的 
 	for child in card_container.get_children():
-		index += 1
-		if child == card_hover:
+		if child == card_draged:
+			is_other_list = false
 			break
 	
-	if index != -1:	
-		card_container.move_child(card_draged, index)
-
+	if not is_other_list:
+		var index = -1
+		for child in card_container.get_children():
+			index += 1
+			if child == card_hover:
+				break
+		if index != -1:
+			card_container.move_child(card_draged, index)
+	else:
+		# 是从其它 list 拖过来的
+		var lists = self.get_parent()
+		var other_card_container = null
+		var ListContainer = lists.get_node("%ListContainer")
+		for list in ListContainer.get_children():
+			if list == self:
+				continue
+			var CardContainer = list.get_node("%CardContainer")
+			for card in CardContainer.get_children():
+				if card == card_draged:
+					other_card_container = CardContainer
+					break
+			if other_card_container != null:
+				break
+		
+		if other_card_container == null:
+			print("unknow err.")
+		
+		other_card_container.remove_child(card_draged)
+		
+		var index = -1
+		for child in card_container.get_children():
+			index += 1
+			if child == card_hover:
+				break
+		if index != -1:
+			card_container.add_child(card_draged)
+			card_container.move_child(card_draged, index)

@@ -14,6 +14,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ListContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(280, 612)
 layout_mode = 2
 size_flags_vertical = 3
