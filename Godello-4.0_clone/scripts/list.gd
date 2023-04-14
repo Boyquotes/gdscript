@@ -80,13 +80,15 @@ func _drop_data(pos, card_draged):
 			break
 	
 	if not is_other_list:
-		var index = -1
-		for child in card_container.get_children():
-			index += 1
-			if child == card_hover:
-				break
-		if index != -1:
-			card_container.move_child(card_draged, index)
+#		var index = -1
+#		for child in card_container.get_children():
+#			index += 1
+#			if child == card_hover:
+#				index = child.get_index()
+#				break
+#		if index != -1:
+#			card_container.move_child(card_draged, index)
+		card_container.move_child(card_draged, card_hover.get_index())
 	else:
 		# 是从其它 list 拖过来的
 		var lists = self.get_parent()
