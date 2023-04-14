@@ -21,6 +21,24 @@ func on_card_hover_changed(card):
 	card_hover = card
 
 func _get_drag_data(pos):
+	if card_hover == null:
+		# 从别的 list 拖过来的 card，再对它进行拖动会发生这种情况
+		var closest_child = null
+		var last_distance : float = -1
+		var is_before := true
+
+		var scrolled_mouse_pos := Vector2(pos.x, pos.y + card_container_scroll.get_v_scroll())
+
+		for child in card_container.get_children():
+			var distance : float = child.get_position().distance_to(scrolled_mouse_pos)
+
+			if last_distance == -1 or (distance < last_distance):
+				last_distance = distance
+				closest_child = child
+		if closest_child == null:
+			return
+		card_hover = closest_child
+		
 	var preview = cardPreview.instantiate()
 	set_drag_preview(preview)
 	card_draged = card_hover
