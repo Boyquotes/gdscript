@@ -1,13 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6alh2e0n1ued"]
-
-[ext_resource type="Script" path="res://scripts/card_mouse_preview.gd" id="2"]
+[gd_scene format=3 uid="uid://c6alh2e0n1ued"]
 
 [node name="Card" type="MarginContainer"]
 custom_minimum_size = Vector2(240, 40)
 rotation = 3.5
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("2")
 
 [node name="CardContent" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(240, 40)

@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://uag5731iwgy4"]
+[gd_scene load_steps=5 format=3 uid="uid://uag5731iwgy4"]
 
-[ext_resource type="Script" path="res://scripts/card.gd" id="1_reusg"]
 [ext_resource type="PackedScene" uid="uid://x8jvpjtyb85k" path="res://scenes/title_container.tscn" id="2"]
 [ext_resource type="StyleBox" path="res://assets/style_panel_card.tres" id="2_twyt8"]
 [ext_resource type="Texture2D" uid="uid://tg0tkrltdrff" path="res://assets/icons/description.svg" id="5"]
@@ -16,7 +15,6 @@ theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 0
-script = ExtResource("1_reusg")
 
 [node name="CardContent" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(240, 40)
