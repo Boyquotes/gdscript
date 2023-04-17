@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cupbp04cywhdp"]
+[gd_scene load_steps=3 format=3 uid="uid://cupbp04cywhdp"]
+
+[ext_resource type="Script" path="res://scripts/list.gd" id="1_8pjmo"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0e06x"]
 load_path = "res://.godot/imported/dots.svg-a0c7959362e12a4873169ee22a237fea.ctex"
@@ -10,6 +12,7 @@ anchor_bottom = 1.0
 offset_right = 252.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_8pjmo")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

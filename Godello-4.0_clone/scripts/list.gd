@@ -3,7 +3,7 @@ extends PanelContainer
 @onready var card_container_scroll := $MarginContainer/VerticalContent/CardContainerScroll
 @onready var card_container := $MarginContainer/VerticalContent/CardContainerScroll/CardContainer
 const CardScene := preload("res://scenes/card.tscn")
-const cardPreview := preload("res://scenes/card_mouse_preview.tscn")
+#const cardPreview := preload("res://scenes/card_mouse_preview.tscn")
 
 var card_hover = null
 var card_draged = null
@@ -14,17 +14,29 @@ func _ready():
 		var card_element = CardScene.instantiate()
 		card_container.add_child(card_element)
 		card_element.setTitle(str(i))
-		
-		card_element.card_hover_changed.connect(on_card_hover_changed)
-		
-func on_card_hover_changed(card):
-	pass
-
-func _get_drag_data(pos):
-	return null
 
 func _can_drop_data(pos, card_draged):
-	return null
+	var closest_child
+	var last_distance : float = -1
+	var is_before := true
+
+	var scrolled_mouse_pos := Vector2(pos.x, pos.y + card_container_scroll.get_v_scroll())
+
+	for child in card_container.get_children():
+		var distance : float = child.get_position().distance_to(scrolled_mouse_pos)
+
+		if last_distance == -1 or (distance < last_distance):
+			last_distance = distance
+			closest_child = child
+
+	var title = closest_child.getTitle()
+	print("closest_child: " + title)
+	card_container.move_child(card_draged, closest_child.get_index())
+	return true
 
 func _drop_data(pos, card_draged):
-	pass
+	print("### list droped")
+	card_draged.is_draged = false
+
+
+
