@@ -15,28 +15,28 @@ func _ready():
 		card_container.add_child(card_element)
 		card_element.setTitle(str(i))
 
-func _can_drop_data(pos, card_draged):
-	var closest_child
-	var last_distance : float = -1
-	var is_before := true
-
-	var scrolled_mouse_pos := Vector2(pos.x, pos.y + card_container_scroll.get_v_scroll())
-
-	for child in card_container.get_children():
-		var distance : float = child.get_position().distance_to(scrolled_mouse_pos)
-
-		if last_distance == -1 or (distance < last_distance):
-			last_distance = distance
-			closest_child = child
-
-	var title = closest_child.getTitle()
-	print("closest_child: " + title)
-	card_container.move_child(card_draged, closest_child.get_index())
+func _can_drop_data(_pos, _card_draged):
+	
+#	var closest_child
+#	var last_distance : float = -1
+#	var is_before := true
+#
+#	var scrolled_mouse_pos := Vector2(pos.x, pos.y + card_container_scroll.get_v_scroll())
+#
+#	for child in card_container.get_children():
+#		var distance : float = child.get_position().distance_to(scrolled_mouse_pos)
+#
+#		if last_distance == -1 or (distance < last_distance):
+#			last_distance = distance
+#			closest_child = child
+#
+#	var title = closest_child.getTitle()
+#	print("closest_child: " + title)
+#	card_container.move_child(card_draged, closest_child.get_index())
 	return true
 
-func _drop_data(pos, card_draged):
+func _drop_data(_pos, _card_draged):
 	print("### list droped")
-	card_draged.is_draged = false
-
+	_card_draged.set_drag_looking(false)
 
 

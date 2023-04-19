@@ -35,13 +35,20 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CardContent/InnerPadding"]
+custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 
 [node name="TitleContainer" parent="CardContent/InnerPadding/VBoxContainer" instance=ExtResource("2")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Split" parent="CardContent/InnerPadding/VBoxContainer/TitleContainer" index="1"]
 visible = true
+
+[node name="sizePlaceholder0" type="VSeparator" parent="CardContent/InnerPadding/VBoxContainer/TitleContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 2
 
 [node name="IndicatorsContainer" type="HBoxContainer" parent="CardContent/InnerPadding/VBoxContainer"]
 layout_mode = 2
@@ -72,6 +79,7 @@ layout_mode = 2
 text = "0/1"
 
 [node name="SizePlaceholder" type="HSeparator" parent="CardContent/InnerPadding/VBoxContainer/IndicatorsContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(8, 23)
 layout_mode = 2
 
