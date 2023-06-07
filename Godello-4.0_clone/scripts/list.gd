@@ -15,7 +15,7 @@ func _ready():
 		card_container.add_child(card_element)
 		card_element.setTitle(str(i))
 
-func _can_drop_data(pos, card_draged):
+func _can_drop_data(pos, _card_draged):
 	
 	var closest_child
 	var last_distance : float = -1
@@ -31,9 +31,12 @@ func _can_drop_data(pos, card_draged):
 			closest_child = child
 
 	var title = closest_child.getTitle()
-	print("card_draged: " + card_draged.getTitle())
+	print("card_draged: " + _card_draged.getTitle())
 	print("closest_child: " + title)
-	card_container.move_child(card_draged, closest_child.get_index())
+	if _card_draged.get_parent() == card_container:
+		card_container.move_child(_card_draged, closest_child.get_index())
+	else:
+		print("### card_draged from another list")
 	return true
 
 func _drop_data(_pos, _card_draged):
