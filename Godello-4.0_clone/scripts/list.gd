@@ -3,7 +3,7 @@ extends PanelContainer
 @onready var card_container_scroll := $MarginContainer/VerticalContent/CardContainerScroll
 @onready var card_container := $MarginContainer/VerticalContent/CardContainerScroll/CardContainer
 const CardScene := preload("res://scenes/card.tscn")
-#const cardPreview := preload("res://scenes/card_mouse_preview.tscn")
+#const CardDragPreview := preload("res://scenes/card_mouse_preview.tscn")
 
 var card_hover = null
 var card_draged = null

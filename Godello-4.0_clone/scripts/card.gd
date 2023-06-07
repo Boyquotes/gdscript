@@ -8,7 +8,7 @@ extends MarginContainer
 const StyleDefault := preload("res://assets/style_panel_card.tres")
 const StuleDragged := preload("res://assets/style_panel_card_dragged.tres")
 
-var cardPreview := preload("res://scenes/card_mouse_preview.tscn")
+var CardDragPreview := preload("res://scenes/card_mouse_preview.tscn")
 
 
 signal card_hover_changed(card_hover)
@@ -38,6 +38,8 @@ func _on_mouse_exited():  # 鼠标离开控件
 	
 func _get_drag_data(_pos):
 	print("## card draged")
+	var card = CardDragPreview.instantiate()
+	set_drag_preview(card)
 	is_draged = true
 	self.set_drag_looking(true)
 	return self
