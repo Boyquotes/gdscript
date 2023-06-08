@@ -7,8 +7,6 @@ const CardScene := preload("res://scenes/card.tscn")
 
 var card_hover = null
 var card_draged = null
-var pre_index = -1
-var pre_draged = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,27 +30,28 @@ func _can_drop_data(pos, _card_draged):
 			last_distance = distance
 			closest_child = child
 
-	var title = closest_child.getTitle()
+	var idx = 0
+
 	print("card_draged: " + _card_draged.getTitle())
-	print("closest_child: " + title)
+	if closest_child != null:
+		idx = closest_child.get_index()
+		print("closest_child: " + closest_child.getTitle())
+		
 	if _card_draged.get_parent() == card_container:
 
-		card_container.move_child(_card_draged, closest_child.get_index())
+		card_container.move_child(_card_draged, idx)
 	else:
 		print("### card_draged from another list")
-		var idex = closest_child.get_index()
+		#var idex = closest_child.get_index()
 		var another_list = _card_draged.get_parent()
 		another_list.remove_child(_card_draged)
 		card_container.add_child(_card_draged)
-		card_container.move_child(_card_draged, idex)
-		#card_container.move_child(_card_draged, pre_index)
-		#_card_draged.set_drag_looking(false)
-		var a = 1
+		card_container.move_child(_card_draged, idx)
 	return true
 
 func _drop_data(_pos, _card_draged):
 	print("### list droped")
 	_card_draged.set_drag_looking(false)
-	pre_index = -1
+
 
 
